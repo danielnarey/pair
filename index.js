@@ -1,4 +1,8 @@
-const pair = (a, b) => (o) => o(a, b);
+//pair
+
+const _of = (a, b) => (o) => o(a, b);
+
+const _from = (p) => _of(...p);
 
 const first = (p) => p((a, b) => a);
 
@@ -13,8 +17,11 @@ const mapBoth = (p, f) => p((a, b) => (o) => o(f(a), f(b)));
 const toArray = (p) => p((a, b) => [a, b]);
 
 
+//list
 
-const list = (...ls) => (o) => o(...ls);
+const _of = (...ls) => (o) => o(...ls);
+
+const _from = (ls) => (o) => o(...ls);
 
 const cons = (h, ls) => ls((...t) => (o) => o(h, ...t));
 
@@ -23,3 +30,11 @@ const head = (p) => p((h) => h);
 const tail = (p) => p((h, ...t) => (o) => o(...t));
 
 const toArray = (p) => p((...ls) => ls);
+
+
+//maybe
+
+const _of = (v) => (o) => o(v);
+
+const withDefault = (m, d) => m((v) => v ? v : d); 
+
