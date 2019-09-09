@@ -1,4 +1,4 @@
-const pair = {
+export default {
   of: (a, b) => (o) => o(a, b),
   from: (p) => ((a, b) => (o) => o(a, b))(...p),
   first: (p) => p((a) => a),
@@ -11,6 +11,3 @@ const pair = {
   toArray: (p) => p((a, b) => [a, b]),
   toString: (p) => p((a, b) => `(${a} . ${b})`),
 };
-
-
-export default pair;
