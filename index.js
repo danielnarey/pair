@@ -1,3 +1,5 @@
+const stringify = (s) => Array.isArray(s) : `[${s}]` : `${s}`;
+
 export default {
   of: (a, b) => (o) => o(a, b),
   from: (p) => ((a, b) => (o) => o(a, b))(...p),
@@ -9,5 +11,5 @@ export default {
   mapBoth: (p, f) => p((a, b) => (o) => o(f(a), f(b))),
   reverse: (p) => p((a, b) => (o) => o(b, a)),
   toArray: (p) => p((a, b) => [a, b]),
-  toString: (p) => p((a, b) => `(${a} . ${b})`),
+  toString: (p) => p((a, b) => `(${stringify(a)} . ${stringify(b)})`),
 };
