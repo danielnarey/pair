@@ -8,3 +8,12 @@ test('of', (t) => {
   t.true(pair.toString(pair.of('a')) === '(a . undefined)');
   t.true(pair.toString(pair.of()) === '(undefined . undefined)');
 });
+
+
+test('from', (t) => {
+  t.true(pair.toString(pair.from(['a', 1])) === '(a . 1)');
+  t.true(pair.toString(pair.from(['a', 1, 'b'])) === '(a . 1)');
+  t.true(pair.toString(pair.from(['a'])) === '(a . undefined)');
+  t.true(pair.toString(pair.from([])) === '(undefined . undefined)');
+  t.throws(() => pair.from());
+});
