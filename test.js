@@ -33,12 +33,16 @@ test('second', (t) => {
 
 
 test('mapFirst', (t) => {
-  t.true(pair.mapFirst(pair.of('a', 1), (s) => `${s}b`) === 'ab');
+  const mapped = pair.mapFirst(pair.of('a', 1), (s) => `${s}b`);
+
+  t.true(pair.toString(mapped) === '(ab . 1)');
 });
 
 
 test('mapSecond', (t) => {
-  t.true(pair.mapSecond(pair.of('a', 1), (n) => n + 1) === 2);
+  const mapped = pair.mapSecond(pair.of('a', 1), (n) => n + 1);
+
+  t.true(pair.toString(mapped) === '(a . 2)';
 });
 
 
