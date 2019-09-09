@@ -42,7 +42,7 @@ test('mapFirst', (t) => {
 test('mapSecond', (t) => {
   const mapped = pair.mapSecond(pair.of('a', 1), (n) => n + 1);
 
-  t.true(pair.toString(mapped) === '(a . 2)';
+  t.true(pair.toString(mapped) === '(a . 2)');
 });
 
 
