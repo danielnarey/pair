@@ -1,4 +1,4 @@
-const stringify = (s) => Array.isArray(s) : `[${s}]` : `${s}`;
+const stringify = (s) => Array.isArray(s) ? `[${s}]` : `${s}`;
 
 export default {
   of: (a, b) => (o) => o(a, b),
