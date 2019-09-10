@@ -3,27 +3,32 @@
 **A tiny functional data structure for working with paired values**
 
 
-## Example
+## Examples
 
 ```js
 import pair from '@danielnarey/pair';
 // OR: const pair = require('@danielnarey/pair');
 
-const p = pair.of('a', 1);
-
+// constructor
+const p = pair.of('🍐', 42);
 typeof(p); //--> 'function'
 
-pair.first(p);  //--> 'a'
-pair.second(p); //--> 1
-pair.toArray(p); //--> ['a', 1]
-pair.toString(p); //--> '(a . 1)'
+// accessors
+pair.first(p);  //--> '🍐'
+pair.second(p); //--> 42
 
-const q = pair.mapFirst(p, (s) => `${s}b`);
+// conversion
+pair.toArray(p); //--> ['🍐', 42]
+pair.toString(p); //--> '(🍐 . 42)'
+
+// functional transforms
+const q = pair.mapFirst(p, (s) => `${s}🍎`);
 const r = pair.mapSecond(q, (n) => n + 1);
 
-pair.toString(p); //--> '(a . 1)'
-pair.toString(q); //--> '(ab . 1)'
-pair.toString(r); //--> '(ab . 2)'
+// immutability
+pair.toString(p); //--> '(🍐 . 42)'
+pair.toString(q); //--> '(🍐🍎 . 42)'
+pair.toString(r); //--> '(🍐🍎 . 43)'
 
 ```
 
@@ -50,8 +55,14 @@ Apply a function to the second value of a pair.
 ### `mapEach(p, f1, f2) => (f1(a) . f2(b))`
 Apply a function to the each value of a pair.
 
-### `mapEach(p, f) => (f(a) . f(b))`
+### `mapBoth(p, f) => (f(a) . f(b))`
 Apply a single function to both values of a pair.
+
+### `reduce(p, reducer, [initial]) => result`
+Reduce (fold) a pair from the left and return the result. The *reducer* should be a function of the form `(accumulator, current) => intermediate`. If specified, the *initial* value is the value of *accumulator* on the first pass. If not specified, the *reducer* executes only once with the first and second values of the pair as its arguments.
+
+### `reduceRight(p, reducer, [initial]) => result`
+Reduce (fold) a pair from the right and return the result. Equivalent to `reduce` with the order of the pair reversed.
 
 ### `reverse(p) => (b . a)`
 Reverse the order of a pair of values, returning an interface to the reordered pair.
@@ -61,3 +72,11 @@ Returns the paired values as a length-2 array.
 
 ### `toString(p) => '(a . b)'`
 Returns a string representing a pair. 
+
+
+## Prior Art
+- Lisp: [cons](https://en.m.wikipedia.org/wiki/Cons)
+- Racket/base: [pair](https://docs.racket-lang.org/reference/pairs.html)
+- Racket/rebellion: [pair](https://docs.racket-lang.org/rebellion/Pairs.html)
+- Haskell/base: [Data.Tuple](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Tuple.html)
+- Elm/core: [Tuple](https://package.elm-lang.org/packages/elm/core/latest/Tuple)
