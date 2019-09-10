@@ -64,8 +64,8 @@ test('reduce', (t) => {
   const r1 = pair.reduce(pair.of('a', 1), (a, k) => `${a}${k}`, '!');
   const r2 = pair.reduce(pair.of('a', 1), (a, k) => `${a}${k}`);
   
-  t.true(pair.toString(r1) === '!a1');
-  t.true(pair.toString(r2) === 'a1');
+  t.true(r1 === '!a1');
+  t.true(r2 === 'a1');
 });
 
 
@@ -73,8 +73,8 @@ test('reduceRight', (t) => {
   const r1 = pair.reduceRight(pair.of('a', 1), (a, k) => `${a}${k}`, '!');
   const r2 = pair.reduceRight(pair.of('a', 1), (a, k) => `${a}${k}`);
   
-  t.true(pair.toString(r1) === '!1a');
-  t.true(pair.toString(r2) === '1a');
+  t.true(r1 === '!1a');
+  t.true(r2 === '1a');
 });
 
 
