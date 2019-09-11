@@ -1,6 +1,6 @@
 {
   "name": "@danielnarey/pair",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tiny functional data structure for pairs of arbitrary values",
   "source": "index.js",
   "main": "dist/index.js",
