@@ -14,7 +14,7 @@
   "scripts": {
     "build": "microbundle --target node",
     "lint": "eslint --fix index.js",
-    "release": "npm test && np --no-tests",
+    "release": "npm run lint && npm run build && np",
     "sync": "git pull && git add . && git commit -m 'automated sync' && git push",
     "test": "npm run lint && npm run build && ava",
     "update": "updtr"
