@@ -1,7 +1,7 @@
 {
   "name": "@danielnarey/pair",
   "version": "0.1.0",
-  "description": "A tiny functional data structure for joining two arbitrary values",
+  "description": "A tiny functional data structure for pairs of arbitrary values",
   "source": "index.js",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",

@@ -1,6 +1,6 @@
 # @danielnarey/pair [![Build Status](https://travis-ci.com/danielnarey/pair.svg?branch=master)](https://travis-ci.com/danielnarey/pair) [![npm (scoped)](https://img.shields.io/npm/v/@danielnarey/pair)](https://www.npmjs.com/package/@danielnarey/pair)
 
-**A tiny functional data structure for joining two arbitrary values**
+**A tiny functional data structure for pairs of arbitrary values**
 
 
 ## Examples
