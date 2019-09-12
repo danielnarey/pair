@@ -2,6 +2,8 @@
 
 **A tiny functional data structure for pairs of arbitrary values**
 
+When you have two values that you want to join with the same reference or return from a function, using a **pair** gives you immutability, along with a clean functional pattern for updating one or both values to a new reference.
+
 
 ## Examples
 
@@ -38,7 +40,7 @@ pair.toString(r); //--> '(🍐🍎 . 43)'
 Join two arbitrary values *a* and *b* as a pair, returning a functional interface to the paired values (denoted as `(a . b)`).
 
 ### `from([a, b]) => (a . b)`
-Take the first two values of an array (or other iterable) and join them as a pair. 
+Take the first two values of an array (or other iterable) and join them as a pair.
 
 ### `first(p) => a`
 Returns the first value of a pair.
@@ -71,7 +73,7 @@ Reverse the order of a pair of values, returning an interface to the reordered p
 Returns the paired values as a length-2 array.
 
 ### `toString(p) => '(a . b)'`
-Returns a string representing a pair. 
+Returns a string representing a pair.
 
 
 ## Prior Art

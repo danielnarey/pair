@@ -1,17 +1,30 @@
-const stringify = (s) => (Array.isArray(s) ? `[${s}]` : `${s}`);
+import _from from './src/from';
+import _of from './src/of';
+import first from './src/first';
+import mapBoth from './src/map-both';
+import mapEach from './src/map-each';
+import mapFirst from './src/map-first';
+import mapSecond from './src/map-second';
+import reduce from './src/reduce';
+import reduceRight from './src/reduce-right';
+import reverse from './src/reverse';
+import second from './src/second';
+import toArray from './src/to-array';
+import toString from './src/to-string';
+
 
 export default {
-  of: (a, b) => (o) => o(a, b),
-  from: (p) => ((a, b) => (o) => o(a, b))(...p),
-  first: (p) => p((a) => a),
-  second: (p) => p((a, b) => b),
-  mapFirst: (p, f) => p((a, b) => (o) => o(f(a), b)),
-  mapSecond: (p, f) => p((a, b) => (o) => o(a, f(b))),
-  mapEach: (p, f1, f2) => p((a, b) => (o) => o(f1(a), f2(b))),
-  mapBoth: (p, f) => p((a, b) => (o) => o(f(a), f(b))),
-  reduce: (p, r, x) => p((a, b) => (x ? r(r(x, a), b) : r(a, b))),
-  reduceRight: (p, r, x) => p((a, b) => (x ? r(r(x, b), a) : r(b, a))),
-  reverse: (p) => p((a, b) => (o) => o(b, a)),
-  toArray: (p) => p((a, b) => [a, b]),
-  toString: (p) => p((a, b) => `(${stringify(a)} . ${stringify(b)})`),
+  from: _from,
+  of: _of,
+  first,
+  mapBoth,
+  mapEach,
+  mapFirst,
+  mapSecond,
+  reduce,
+  reduceRight,
+  reverse,
+  second,
+  toArray,
+  toString,
 };
