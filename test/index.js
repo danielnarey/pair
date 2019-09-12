@@ -1,5 +1,5 @@
 import test from 'ava';
-import pair from '../dist/index';
+import pair from '../dist/index.cjs';
 
 
 test('of', (t) => {
