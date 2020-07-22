@@ -1,6 +1,8 @@
-# @danielnarey/pair [![Build Status](https://travis-ci.com/danielnarey/pair.svg?branch=master)](https://travis-ci.com/danielnarey/pair) [![npm (scoped)](https://img.shields.io/npm/v/@danielnarey/pair)](https://www.npmjs.com/package/@danielnarey/pair) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@danielnarey/pair)
+# @danielnarey/pair
 
-**A tiny functional data structure for pairs of arbitrary values**
+**[Deprecated] A tiny functional data structure for pairs of arbitrary values**
+
+> **Deprecation Warning**: *This experimental library is no longer in active development and will not be updated in response to Node.js version  releases or security vulnerabilities identified in the dependency tree.*
 
 When you have two values that you want to join with the same reference or return from a function, using a **pair** gives you immutability, along with a clean functional pattern for updating one or both values to a new reference.
 
