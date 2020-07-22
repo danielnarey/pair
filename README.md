@@ -4,6 +4,9 @@
 
 > **Deprecation Warning**: *This experimental library is no longer in active development and will not be updated in response to Node.js version  releases or security vulnerabilities identified in the dependency tree.*
 
+
+## Purpose
+
 When you have two values that you want to join with the same reference or return from a function, using a **pair** gives you immutability, along with a clean functional pattern for updating one or both values to a new reference.
 
 
